@@ -18,7 +18,7 @@ class App1 extends StatelessWidget {
           padding: const EdgeInsets.all(8),
           margin: const EdgeInsets.all(6),
           decoration: const BoxDecoration(
-              color: Colors.red,
+              color: Colors.redAccent,
               image: DecorationImage(
                 fit: BoxFit.cover,
                 image: AssetImage("recourses/flutter.png"),
