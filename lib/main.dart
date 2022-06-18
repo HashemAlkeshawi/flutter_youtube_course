@@ -9,20 +9,42 @@ class App1 extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
         home: Scaffold(
-      appBar: AppBar(
-        title: Text("Hello world!"),
-      ),
-      // ========== IMAGE WIDGET ==============////
-      body: Container(
-        margin: EdgeInsets.symmetric(vertical: 10, horizontal: 8),
-        child: (Image.asset(
-          "recourses/flutter.png",
-          width: 400,
-          height: 200,
-          fit: BoxFit.cover,
-        )),
-      ),
-    )
+            appBar: AppBar(
+              title: Text("Hello world!"),
+            ),
+
+            // ========== CARD WIDGET with a container in a column()==============////
+            body: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Container(
+                  margin: EdgeInsets.symmetric(vertical: 10, horizontal: 8),
+                  child: (Image.asset(
+                    "recourses/flutter.png",
+                    width: 400,
+                    height: 200,
+                    fit: BoxFit.cover,
+                  )),
+                ),
+                const Card(
+                  margin: EdgeInsets.symmetric(vertical: 10, horizontal: 8),
+                  child: Text("first card"),
+                ),
+              ],
+            ))
+
+        // ========== IMAGE WIDGET ==============////
+
+        //     Container(
+        //   margin: EdgeInsets.symmetric(vertical: 10, horizontal: 8),
+        //   child: (Image.asset(
+        //     "recourses/flutter.png",
+        //     width: 400,
+        //     height: 200,
+        //     fit: BoxFit.cover,
+        //   )),
+        // ))
 
         // ====== CONTAINERS ===========////
 
