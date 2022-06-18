@@ -15,8 +15,8 @@ class App1 extends StatelessWidget {
 
             // ========== CARD WIDGET with a container in a column()==============////
             body: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
               mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 Container(
                   margin: EdgeInsets.symmetric(vertical: 10, horizontal: 8),
@@ -27,9 +27,58 @@ class App1 extends StatelessWidget {
                     fit: BoxFit.cover,
                   )),
                 ),
-                const Card(
+                Card(
                   margin: EdgeInsets.symmetric(vertical: 10, horizontal: 8),
-                  child: Text("first card"),
+                  color: Color.fromARGB(255, 240, 120, 120),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(8),
+                    side: BorderSide(color: Color(0xff328943), width: 5),
+                  ),
+                  elevation: 12,
+                  shadowColor: Colors.blueGrey,
+                  child: Text(
+                    "First Card",
+                    style: TextStyle(fontSize: 40),
+                  ),
+                ),
+                Row(
+                  mainAxisSize: MainAxisSize.max,
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Card(
+                      margin: EdgeInsets.symmetric(vertical: 10),
+                      color: Color.fromARGB(255, 240, 120, 120),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(8),
+                        side: BorderSide(color: Color(0xff328943), width: 5),
+                      ),
+                      elevation: 12,
+                      shadowColor: Colors.blueGrey,
+                      child: const Text(
+                        "Card1",
+                        style: TextStyle(fontSize: 26),
+                      ),
+                    ),
+                    Card(
+                      margin: EdgeInsets.symmetric(vertical: 10),
+                      color: Color.fromARGB(255, 240, 120, 120),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(8),
+                        side: BorderSide(color: Color(0xff328943), width: 5),
+                      ),
+                      elevation: 12,
+                      shadowColor: Colors.blueGrey,
+                      child: const Text(
+                        "Card2",
+                        style: TextStyle(fontSize: 26),
+                      ),
+                    ),
+                    Text(
+                      "text",
+                      style: TextStyle(fontSize: 28),
+                    ),
+                  ],
                 ),
               ],
             ))
