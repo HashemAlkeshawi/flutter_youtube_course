@@ -12,7 +12,7 @@ class Example extends StatelessWidget {
       home: Scaffold(
         drawer: Drawer(),
         appBar: AppBar(
-          title: Text("Example 1"),
+          title: Text("Example #1"),
         ),
         body: Container(
           // height: double.infinity,
