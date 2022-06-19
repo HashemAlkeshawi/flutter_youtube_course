@@ -10,10 +10,42 @@ class App1 extends StatelessWidget {
     return MaterialApp(
         home: Scaffold(
             appBar: AppBar(
-              title: Text("Hello world!"),
+              title: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text("Hello world!"),
+                  Icon(
+                    Icons.person,
+                    color: Colors.black,
+                  ),
+                ],
+              ),
             ),
-            body: Text("")));
+            body: Icon(
+              Icons.usb,
+              size: 150,
+              // color: Colors.red,
+            )));
 
+    // appBar: AppBar(
+    //   title: Row(
+    //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    //     children: [
+    //       Text("Hello world!"),
+    //       Icon(
+    //         Icons.person,
+    //         color: Colors.black,
+    //       ),
+    //     ],
+    //   ),
+    // ),
+    // body: Icon(
+    //   Icons.add_photo_alternate,
+    //   size: 150,
+    //   // color: Colors.red,
+    // )));
+
+    //=========== Expanded in a COLUMN ================////
     //      Container(
     //       width: double.infinity,
     //       margin: EdgeInsets.all(10),
