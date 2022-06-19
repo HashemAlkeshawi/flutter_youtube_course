@@ -19,28 +19,32 @@ class App1 extends StatelessWidget {
         height: 400,
         color: Colors.black,
         child: Stack(
-          alignment: Alignment.center,
+          // alignment: Alignment.center,
+          clipBehavior: Clip.none,
           children: [
-            Container(
-              width: 350,
-              height: 350,
-              color: Colors.red,
-              child: Text("First"),
+            Positioned(
+              top: 220,
+              child: Container(
+                width: 200,
+                height: 200,
+                color: Colors.red,
+                child: Text("First"),
+              ),
             ),
-            Container(
-              // margin: EdgeInsets.all(35),
-              width: 300,
-              height: 300,
-              color: Colors.green,
-              child: Text("second"),
-            ),
-            Container(
-              // margin: EdgeInsets.all(70),
-              width: 200,
-              height: 200,
-              color: Colors.blue,
-              child: Text("third"),
-            ),
+            // Container(
+            //   // margin: EdgeInsets.all(35),
+            //   width: 300,
+            //   height: 300,
+            //   color: Colors.green,
+            //   child: Text("second"),
+            // ),
+            // Container(
+            //   // margin: EdgeInsets.all(70),
+            //   width: 200,
+            //   height: 200,
+            //   color: Colors.blue,
+            //   child: Text("third"),
+            // ),
           ],
         ),
       ),
