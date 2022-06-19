@@ -13,39 +13,62 @@ class App2 extends StatelessWidget {
       home: Scaffold(
         appBar: AppBar(),
         drawer: Drawer(),
-        body: body(),
+        body: body1(),
       ),
     );
   }
 
-  Widget body() {
-    return (Container(
-      child: IndexedStack(
-        index: 5,
-        children: [
-          Container(
-            width: 100,
-            height: 100,
-            decoration: BoxDecoration(color: Colors.red),
-            child: Text("One"),
-          ),
-          Container(
-            width: 200,
-            height: 200,
-            decoration: BoxDecoration(color: Colors.blue),
-            child: Text("Tow"),
-          ),
-          Container(
-            width: 300,
-            height: 300,
-            decoration: BoxDecoration(color: Colors.green),
-            child: Text("Three"),
-          ),
-        ],
-      ),
-    ));
+  int x = 0;
+
+  Widget body1() {
+    return Column(
+      children: [
+        Container(
+          margin: EdgeInsets.all(115),
+          child: MaterialButton(
+              onPressed: () {
+                x++;
+                print(x.toString());
+              },
+              child: Text("Click!"),
+              textColor: Colors.white,
+              color: Colors.red,
+              padding: EdgeInsets.symmetric(horizontal: 10, vertical: 15),
+              elevation: 10),
+        ),
+      ],
+    );
   }
+//   Widget body() {
+//     return SingleChildScrollView(
+//         scrollDirection: Axis.horizontal,
+//         child: Container(
+//           child: Row(
+//             children: [
+//               _container(Color.fromARGB(255, 209, 158, 154), text: "init text"),
+//               _container(Colors.blue, textAlign: TextAlign.end),
+//               _container(Colors.green),
+//               _container(Colors.yellow),
+//             ],s
+//           ),
+//         ));
 }
+
+//   Widget _container(Color color, {String? text, TextAlign? textAlign}) {
+//     return Container(
+//       margin: EdgeInsets.all(15),
+//       width: 130,
+//       height: 200,
+//       alignment: Alignment.center,
+//       decoration: BoxDecoration(
+//           color: color, borderRadius: BorderRadius.all(Radius.circular(23))),
+//       child: Text(
+//         text ?? "A container",
+//         textAlign: textAlign ?? TextAlign.center,
+//       ),
+//     );
+//   }
+// }
 
 // class Example extends StatelessWidget {
 //   @override
@@ -224,256 +247,256 @@ class App2 extends StatelessWidget {
 //           ],
 //         ),
 
-        // appBar: AppBar(
-        //   title: Row(
-        //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        //     children: [
-        //       Text("Hello world!"),
-        //       Icon(
-        //         Icons.person,
-        //         color: Colors.black,
-        //       ),
-        //     ],
-        //   ),
-        // ),
-        // body: Icon(
-        //   Icons.add_photo_alternate,
-        //   size: 150,
-        //   // color: Colors.red,
-        // )
+// appBar: AppBar(
+//   title: Row(
+//     mainAxisAlignment: MainAxisAlignment.spaceBetween,
+//     children: [
+//       Text("Hello world!"),
+//       Icon(
+//         Icons.person,
+//         color: Colors.black,
+//       ),
+//     ],
+//   ),
+// ),
+// body: Icon(
+//   Icons.add_photo_alternate,
+//   size: 150,
+//   // color: Colors.red,
+// )
 
-        //=========== Expanded in a COLUMN ================////
-        //      Container(
-        //       width: double.infinity,
-        //       margin: EdgeInsets.all(10),
-        //       child: Column(
-        //         mainAxisAlignment: MainAxisAlignment.start,
-        //         crossAxisAlignment: CrossAxisAlignment.stretch,
-        //         children: [
-        //           Expanded(
-        //             flex: 2,
-        //             child: Container(
-        //               alignment: Alignment.center,
-        //               child: Text("One"),
-        //               color: Colors.green,
-        //             ),
-        //           ),
-        //           Expanded(
-        //             flex: 3,
-        //             child: Container(
-        //               alignment: Alignment.center,
-        //               child: Text("Two"),
-        //               color: Colors.red,
-        //             ),
-        //           ),
-        //           Expanded(
-        //             flex: 4,
-        //             child: Container(
-        //               alignment: Alignment.center,
-        //               child: Text("Three"),
-        //               color: Colors.yellow,
-        //             ),
-        //           ),
-        //         ],
-        //       ),
-        //     ),
+//=========== Expanded in a COLUMN ================////
+//      Container(
+//       width: double.infinity,
+//       margin: EdgeInsets.all(10),
+//       child: Column(
+//         mainAxisAlignment: MainAxisAlignment.start,
+//         crossAxisAlignment: CrossAxisAlignment.stretch,
+//         children: [
+//           Expanded(
+//             flex: 2,
+//             child: Container(
+//               alignment: Alignment.center,
+//               child: Text("One"),
+//               color: Colors.green,
+//             ),
+//           ),
+//           Expanded(
+//             flex: 3,
+//             child: Container(
+//               alignment: Alignment.center,
+//               child: Text("Two"),
+//               color: Colors.red,
+//             ),
+//           ),
+//           Expanded(
+//             flex: 4,
+//             child: Container(
+//               alignment: Alignment.center,
+//               child: Text("Three"),
+//               color: Colors.yellow,
+//             ),
+//           ),
+//         ],
+//       ),
+//     ),
 
-        //=========== Expanded in a raw================////
+//=========== Expanded in a raw================////
 
-        //      Container(
-        //       margin: EdgeInsets.all(10),
-        //       child: Row(
-        //         children: [
-        //           Expanded(
-        //             flex: 1,
-        //             child: Container(
-        //                 child: Text("One", textAlign: TextAlign.center),
-        //                 color: Colors.green),
-        //           ),
-        //           Expanded(
-        //             flex: 5,
-        //             child: Container(
-        //                 child: Text("Two", textAlign: TextAlign.center),
-        //                 color: Colors.red),
-        //           ),
-        //           Expanded(
-        //             flex: 1,
-        //             child: Container(
-        //                 child: Text("Three", textAlign: TextAlign.center),
-        //                 color: Colors.yellow),
-        //           ),
-        //         ],
-        //       ),
-        //     ),
+//      Container(
+//       margin: EdgeInsets.all(10),
+//       child: Row(
+//         children: [
+//           Expanded(
+//             flex: 1,
+//             child: Container(
+//                 child: Text("One", textAlign: TextAlign.center),
+//                 color: Colors.green),
+//           ),
+//           Expanded(
+//             flex: 5,
+//             child: Container(
+//                 child: Text("Two", textAlign: TextAlign.center),
+//                 color: Colors.red),
+//           ),
+//           Expanded(
+//             flex: 1,
+//             child: Container(
+//                 child: Text("Three", textAlign: TextAlign.center),
+//                 color: Colors.yellow),
+//           ),
+//         ],
+//       ),
+//     ),
 
-        // ====================POSITIONED===============/////
-        // Container(
-        //   width: 400,
-        //   height: 400,
-        //   color: Colors.black,
-        //   child: Stack(
-        //     // alignment: Alignment.center,
-        //     clipBehavior: Clip.none,
-        //     children: [
-        //       Positioned(
-        //         top: 220,
-        //         child: Container(
-        //           width: 200,
-        //           height: 200,
-        //           color: Colors.red,
-        //           child: Text("First"),
-        //         ),
-        //       ),
-        // Container(
-        //   // margin: EdgeInsets.all(35),
-        //   width: 300,
-        //   height: 300,
-        //   color: Colors.green,
-        //   child: Text("second"),
-        // ),
-        // Container(
-        //   // margin: EdgeInsets.all(70),
-        //   width: 200,
-        //   height: 200,
-        //   color: Colors.blue,
-        //   child: Text("third"),
-        // ),
-        //       ],
-        //     ),
-        //   ),
+// ====================POSITIONED===============/////
+// Container(
+//   width: 400,
+//   height: 400,
+//   color: Colors.black,
+//   child: Stack(
+//     // alignment: Alignment.center,
+//     clipBehavior: Clip.none,
+//     children: [
+//       Positioned(
+//         top: 220,
+//         child: Container(
+//           width: 200,
+//           height: 200,
+//           color: Colors.red,
+//           child: Text("First"),
+//         ),
+//       ),
+// Container(
+//   // margin: EdgeInsets.all(35),
+//   width: 300,
+//   height: 300,
+//   color: Colors.green,
+//   child: Text("second"),
+// ),
+// Container(
+//   // margin: EdgeInsets.all(70),
+//   width: 200,
+//   height: 200,
+//   color: Colors.blue,
+//   child: Text("third"),
+// ),
+//       ],
+//     ),
+//   ),
 
-        // ====================StackWdiget===============/////
-        //   body: Container(
-        //     width: 400,
-        //     height: 400,
-        //     color: Colors.black,
-        //     child: Stack(
-        //       alignment: Alignment.center,
-        //       children: [
-        //         Container(
-        //           width: 350,
-        //           height: 350,
-        //           color: Colors.red,
-        //           child: Text("First"),
-        //         ),
-        //         Container(
-        //           // margin: EdgeInsets.all(35),
-        //           width: 300,
-        //           height: 300,
-        //           color: Colors.green,
-        //           child: Text("second"),
-        //         ),
-        //         Container(
-        //           // margin: EdgeInsets.all(70),
-        //           width: 200,
-        //           height: 200,
-        //           color: Colors.blue,
-        //           child: Text("third"),
-        //         ),
-        //       ],
-        //     ),
-        //   ),
+// ====================StackWdiget===============/////
+//   body: Container(
+//     width: 400,
+//     height: 400,
+//     color: Colors.black,
+//     child: Stack(
+//       alignment: Alignment.center,
+//       children: [
+//         Container(
+//           width: 350,
+//           height: 350,
+//           color: Colors.red,
+//           child: Text("First"),
+//         ),
+//         Container(
+//           // margin: EdgeInsets.all(35),
+//           width: 300,
+//           height: 300,
+//           color: Colors.green,
+//           child: Text("second"),
+//         ),
+//         Container(
+//           // margin: EdgeInsets.all(70),
+//           width: 200,
+//           height: 200,
+//           color: Colors.blue,
+//           child: Text("third"),
+//         ),
+//       ],
+//     ),
+//   ),
 
-        // ========== CARD WIDGET with a container in a column() and Raw()==============////
+// ========== CARD WIDGET with a container in a column() and Raw()==============////
 
-        //  Column(
-        //   mainAxisAlignment: MainAxisAlignment.start,
-        //   crossAxisAlignment: CrossAxisAlignment.stretch,
-        //   children: [
-        //     Container(
-        //       margin: EdgeInsets.symmetric(vertical: 10, horizontal: 8),
-        //       child: (Image.asset(
-        //         "recourses/flutter.png",
-        //         width: 400,
-        //         height: 200,
-        //         fit: BoxFit.cover,
-        //       )),
-        //     ),
-        //     Card(
-        //       margin: EdgeInsets.symmetric(vertical: 10, horizontal: 8),
-        //       color: Color.fromARGB(255, 240, 120, 120),
-        //       shape: RoundedRectangleBorder(
-        //         borderRadius: BorderRadius.circular(8),
-        //         side: BorderSide(color: Color(0xff328943), width: 5),
-        //       ),
-        //       elevation: 12,
-        //       shadowColor: Colors.blueGrey,
-        //       child: Text(
-        //         "First Card",
-        //         style: TextStyle(fontSize: 40),
-        //       ),
-        //     ),
-        //     Row(
-        //       mainAxisSize: MainAxisSize.max,
-        //       mainAxisAlignment: MainAxisAlignment.spaceAround,
-        //       crossAxisAlignment: CrossAxisAlignment.start,
-        //       children: [
-        //         Card(
-        //           margin: EdgeInsets.symmetric(vertical: 10),
-        //           color: Color.fromARGB(255, 240, 120, 120),
-        //           shape: RoundedRectangleBorder(
-        //             borderRadius: BorderRadius.circular(8),
-        //             side: BorderSide(color: Color(0xff328943), width: 5),
-        //           ),
-        //           elevation: 12,
-        //           shadowColor: Colors.blueGrey,
-        //           child: const Text(
-        //             "Card1",
-        //             style: TextStyle(fontSize: 26),
-        //           ),
-        //         ),
-        //         Card(
-        //           margin: EdgeInsets.symmetric(vertical: 10),
-        //           color: Color.fromARGB(255, 240, 120, 120),
-        //           shape: RoundedRectangleBorder(
-        //             borderRadius: BorderRadius.circular(8),
-        //             side: BorderSide(color: Color(0xff328943), width: 5),
-        //           ),
-        //           elevation: 12,
-        //           shadowColor: Colors.blueGrey,
-        //           child: const Text(
-        //             "Card2",
-        //             style: TextStyle(fontSize: 26),
-        //           ),
-        //         ),
-        //         Text(
-        //           "text",
-        //           style: TextStyle(fontSize: 28),
-        //         ),
-        //       ],
-        //     ),
-        //   ],
+//  Column(
+//   mainAxisAlignment: MainAxisAlignment.start,
+//   crossAxisAlignment: CrossAxisAlignment.stretch,
+//   children: [
+//     Container(
+//       margin: EdgeInsets.symmetric(vertical: 10, horizontal: 8),
+//       child: (Image.asset(
+//         "recourses/flutter.png",
+//         width: 400,
+//         height: 200,
+//         fit: BoxFit.cover,
+//       )),
+//     ),
+//     Card(
+//       margin: EdgeInsets.symmetric(vertical: 10, horizontal: 8),
+//       color: Color.fromARGB(255, 240, 120, 120),
+//       shape: RoundedRectangleBorder(
+//         borderRadius: BorderRadius.circular(8),
+//         side: BorderSide(color: Color(0xff328943), width: 5),
+//       ),
+//       elevation: 12,
+//       shadowColor: Colors.blueGrey,
+//       child: Text(
+//         "First Card",
+//         style: TextStyle(fontSize: 40),
+//       ),
+//     ),
+//     Row(
+//       mainAxisSize: MainAxisSize.max,
+//       mainAxisAlignment: MainAxisAlignment.spaceAround,
+//       crossAxisAlignment: CrossAxisAlignment.start,
+//       children: [
+//         Card(
+//           margin: EdgeInsets.symmetric(vertical: 10),
+//           color: Color.fromARGB(255, 240, 120, 120),
+//           shape: RoundedRectangleBorder(
+//             borderRadius: BorderRadius.circular(8),
+//             side: BorderSide(color: Color(0xff328943), width: 5),
+//           ),
+//           elevation: 12,
+//           shadowColor: Colors.blueGrey,
+//           child: const Text(
+//             "Card1",
+//             style: TextStyle(fontSize: 26),
+//           ),
+//         ),
+//         Card(
+//           margin: EdgeInsets.symmetric(vertical: 10),
+//           color: Color.fromARGB(255, 240, 120, 120),
+//           shape: RoundedRectangleBorder(
+//             borderRadius: BorderRadius.circular(8),
+//             side: BorderSide(color: Color(0xff328943), width: 5),
+//           ),
+//           elevation: 12,
+//           shadowColor: Colors.blueGrey,
+//           child: const Text(
+//             "Card2",
+//             style: TextStyle(fontSize: 26),
+//           ),
+//         ),
+//         Text(
+//           "text",
+//           style: TextStyle(fontSize: 28),
+//         ),
+//       ],
+//     ),
+//   ],
 
-        // ========== IMAGE WIDGET ==============////
+// ========== IMAGE WIDGET ==============////
 
-        //     Container(
-        //   margin: EdgeInsets.symmetric(vertical: 10, horizontal: 8),
-        //   child: (Image.asset(
-        //     "recourses/flutter.png",
-        //     width: 400,
-        //     height: 200,
-        //     fit: BoxFit.cover,
+//     Container(
+//   margin: EdgeInsets.symmetric(vertical: 10, horizontal: 8),
+//   child: (Image.asset(
+//     "recourses/flutter.png",
+//     width: 400,
+//     height: 200,
+//     fit: BoxFit.cover,
 
-        // ====== CONTAINERS ===========////
+// ====== CONTAINERS ===========////
 
-        // Container(
-        //   width: 200,
-        //   height: 100,
-        //   margin: const EdgeInsets.only(top: 100, left: 80),
-        //   alignment: Alignment.center,
-        //   decoration: const BoxDecoration(color: Colors.redAccent, boxShadow: [
-        //     BoxShadow(
-        //         color: Colors.black,
-        //         blurRadius: 9,
-        //         spreadRadius: 0.5,
-        //         offset: Offset(5, 5))
-        //   ]),
-        //   child: const Text(
-        //     "Hello world!",
-        //     // textAlign: TextAlign.center,
-        //     style: TextStyle(
-        //         color: Color.fromARGB(255, 54, 244, 117), shadows: []),
-        //   ),
+// Container(
+//   width: 200,
+//   height: 100,
+//   margin: const EdgeInsets.only(top: 100, left: 80),
+//   alignment: Alignment.center,
+//   decoration: const BoxDecoration(color: Colors.redAccent, boxShadow: [
+//     BoxShadow(
+//         color: Colors.black,
+//         blurRadius: 9,
+//         spreadRadius: 0.5,
+//         offset: Offset(5, 5))
+//   ]),
+//   child: const Text(
+//     "Hello world!",
+//     // textAlign: TextAlign.center,
+//     style: TextStyle(
+//         color: Color.fromARGB(255, 54, 244, 117), shadows: []),
+//   ),
 //       ),
 //     );
 //   }
