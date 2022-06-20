@@ -1,5 +1,4 @@
 import 'dart:developer';
-import 'dart:html';
 
 import 'package:flutter/material.dart';
 
@@ -23,9 +22,7 @@ class _FirstState extends State<FirstTest> {
     return Scaffold(
       appBar: AppBar(),
       drawer: const Drawer(),
-      body: Container(
-        child: 
-      ),
+      body: Container(child: null),
     );
   }
 }
