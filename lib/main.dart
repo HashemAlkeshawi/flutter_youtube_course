@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -7,68 +8,102 @@ void main() {
 }
 
 class App2 extends StatelessWidget {
+  int x = 0;
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(),
         drawer: Drawer(),
+        floatingActionButton: actionButton(),
         body: body1(),
       ),
     );
   }
 
-  int x = 0;
-
   Widget body1() {
-    return Column(
-      children: [
-        Container(
-          margin: EdgeInsets.all(115),
-          child: MaterialButton(
-              onPressed: () {
-                x++;
-                print(x.toString());
+    return Container(
+      alignment: Alignment.center,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: [
+          Container(
+            width: 200,
+            height: 200,
+            // color: Colors.green,
+            child: GestureDetector(
+              onVerticalDragDown: (DragDownDetails) {
+                print("draged down ended");
               },
-              child: Text("Click!"),
-              textColor: Colors.white,
-              color: Colors.red,
-              padding: EdgeInsets.symmetric(horizontal: 10, vertical: 15),
-              elevation: 10),
-        ),
-      ],
+              // onHorizontalDragDown: (DragDownDetails) {
+              //   print("draged horizontal ended");
+              // },
+              child: Icon(
+                Icons.add,
+                size: 100,
+              ),
+              onTapUp: (tap) {
+                print("UP");
+              },
+              onTapDown: (tap) {
+                print("DOWN");
+              },
+              // onTapCancel: () {
+              //   print("CANCEL");
+              // },
+              // onLongPress: () {
+              //   print("LongPressed");
+              // },
+            ),
+          ),
+        ],
+      ),
     );
   }
-//   Widget body() {
-//     return SingleChildScrollView(
-//         scrollDirection: Axis.horizontal,
-//         child: Container(
-//           child: Row(
-//             children: [
-//               _container(Color.fromARGB(255, 209, 158, 154), text: "init text"),
-//               _container(Colors.blue, textAlign: TextAlign.end),
-//               _container(Colors.green),
-//               _container(Colors.yellow),
-//             ],s
-//           ),
-//         ));
-}
 
-//   Widget _container(Color color, {String? text, TextAlign? textAlign}) {
-//     return Container(
-//       margin: EdgeInsets.all(15),
-//       width: 130,
-//       height: 200,
-//       alignment: Alignment.center,
-//       decoration: BoxDecoration(
-//           color: color, borderRadius: BorderRadius.all(Radius.circular(23))),
-//       child: Text(
-//         text ?? "A container",
-//         textAlign: textAlign ?? TextAlign.center,
-//       ),
-//     );
-//   }
+  FloatingActionButton actionButton() {
+    return FloatingActionButton.small(
+      splashColor: Colors.green,
+      onPressed: () {
+        print((x++).toString());
+      },
+      child: Icon(
+        Icons.add,
+        size: 40,
+      ),
+    );
+  }
+
+  // Widget body() {
+  //   return SingleChildScrollView(
+  //       scrollDirection: Axis.horizontal,
+  //       child: Container(
+  //         child: Row(
+  //           children: [
+  //             _container(Color.fromARGB(255, 209, 158, 154), text: "init text"),
+  //             _container(Colors.blue, textAlign: TextAlign.end),
+  //             _container(Colors.green),
+  //             _container(Colors.yellow),
+  //           ],
+  //         ),
+  //       ));
 // }
+
+  Widget _container(Color color, {String? text, TextAlign? textAlign}) {
+    return Container(
+      margin: EdgeInsets.all(15),
+      width: 130,
+      height: 200,
+      alignment: Alignment.center,
+      decoration: BoxDecoration(
+          color: color, borderRadius: BorderRadius.all(Radius.circular(23))),
+      child: Text(
+        text ?? "A container",
+        textAlign: textAlign ?? TextAlign.center,
+      ),
+    );
+  }
+}
 
 // class Example extends StatelessWidget {
 //   @override
