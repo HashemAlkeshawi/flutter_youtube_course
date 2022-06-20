@@ -2,22 +2,24 @@ import 'package:flutter_application_1/First.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(App1());
+  runApp(const App1());
   // runApp(Example());
   // runApp(App1());
 }
 
 // The defaul statelessWidget class
 class App1 extends StatelessWidget {
+  const App1({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       home: FirstTest(),
     );
   }
 }
 
-
+ 
 
 
 
