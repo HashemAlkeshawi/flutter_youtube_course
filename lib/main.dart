@@ -1,78 +1,26 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter_application_1/First.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(App2());
+  runApp(App1());
   // runApp(Example());
   // runApp(App1());
 }
 
-class App2 extends StatelessWidget {
-  int x = 0;
+// The defaul statelessWidget class
+class App1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(),
-        drawer: Drawer(),
-        floatingActionButton: actionButton(),
-        body: body1(),
-      ),
+      home: FirstTest(),
     );
   }
+}
 
-  Widget body1() {
-    return Container(
-      alignment: Alignment.center,
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: [
-          Container(
-            width: 200,
-            height: 200,
-            // color: Colors.green,
-            child: GestureDetector(
-              onVerticalDragDown: (DragDownDetails) {
-                print("draged down ended");
-              },
-              // onHorizontalDragDown: (DragDownDetails) {
-              //   print("draged horizontal ended");
-              // },
-              child: Icon(
-                Icons.add,
-                size: 100,
-              ),
-              onTapUp: (tap) {
-                print("UP");
-              },
-              onTapDown: (tap) {
-                print("DOWN");
-              },
-              // onTapCancel: () {
-              //   print("CANCEL");
-              // },
-              // onLongPress: () {
-              //   print("LongPressed");
-              // },
-            ),
-          ),
-        ],
-      ),
-    );
-  }
 
-  FloatingActionButton actionButton() {
-    return FloatingActionButton.small(
-      splashColor: Colors.green,
-      onPressed: () {
-        print((x++).toString());
-      },
-      child: Icon(
-        Icons.add,
-        size: 40,
-      ),
-    );
-  }
+
+
+
 
   // Widget body() {
   //   return SingleChildScrollView(
@@ -89,21 +37,7 @@ class App2 extends StatelessWidget {
   //       ));
 // }
 
-  Widget _container(Color color, {String? text, TextAlign? textAlign}) {
-    return Container(
-      margin: EdgeInsets.all(15),
-      width: 130,
-      height: 200,
-      alignment: Alignment.center,
-      decoration: BoxDecoration(
-          color: color, borderRadius: BorderRadius.all(Radius.circular(23))),
-      child: Text(
-        text ?? "A container",
-        textAlign: textAlign ?? TextAlign.center,
-      ),
-    );
-  }
-}
+ 
 
 // class Example extends StatelessWidget {
 //   @override
