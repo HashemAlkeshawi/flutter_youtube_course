@@ -16,6 +16,7 @@ class FirstTest extends StatefulWidget {
 // The STATE class
 
 class _FirstState extends State<FirstTest> {
+  GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
   dynamic selectedCountry;
   int x = 0;
   // List<Map<String, dynamic>> locs = [
@@ -44,6 +45,24 @@ class _FirstState extends State<FirstTest> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
+            ElevatedButton(
+                onPressed: () {
+                  var snackbar = SnackBar(
+                    behavior: SnackBarBehavior.fixed,
+                    duration: Duration(seconds: 8),
+                    // margin: EdgeInsets.only(bottom: 40, left: 10, right: 10),
+                    content: Text("It is working"),
+                    action: SnackBarAction(
+                      label: "Close",
+                      onPressed: () {
+                        print("Closed");
+                      },
+                    ),
+                  );
+                  ScaffoldMessenger.of(context).showSnackBar(snackbar);
+                  setState(() {});
+                },
+                child: Text("Show SnackBar")),
             // RadioListTile(
             //   title: Text("Gaza"),
             //   activeColor: Colors.green[600],
@@ -83,36 +102,36 @@ class _FirstState extends State<FirstTest> {
             //     });
             //   },
             // ),
-            RadioListTile(
-              activeColor: Colors.green[600],
-              selected: country == "RFH" ? true : false,
-              controlAffinity: ListTileControlAffinity.trailing,
-              secondary: Icon(Icons.flag),
-              title: Text("Rafah"),
-              subtitle: Text("Palestine"),
-              value: "RFH",
-              groupValue: country,
-              onChanged: (String? val) {
-                setState(() {
-                  country = val!;
-                });
-              },
-            ),
-            RadioListTile(
-              activeColor: Colors.green[600],
-              selected: country == "JBA" ? true : false,
-              title: Text("Jabalia"),
-              subtitle: Text("Palestine"),
-              secondary: Icon(Icons.games),
-              controlAffinity: ListTileControlAffinity.trailing,
-              value: "JBA",
-              groupValue: country,
-              onChanged: (String? val) {
-                setState(() {
-                  country = val!;
-                });
-              },
-            ),
+            // RadioListTile(
+            //   activeColor: Colors.green[600],
+            //   selected: country == "RFH" ? true : false,
+            //   controlAffinity: ListTileControlAffinity.trailing,
+            //   secondary: Icon(Icons.flag),
+            //   title: Text("Rafah"),
+            //   subtitle: Text("Palestine"),
+            //   value: "RFH",
+            //   groupValue: country,
+            //   onChanged: (String? val) {
+            //     setState(() {
+            //       country = val!;
+            //     });
+            //   },
+            // ),
+            // RadioListTile(
+            //   activeColor: Colors.green[600],
+            //   selected: country == "JBA" ? true : false,
+            //   title: Text("Jabalia"),
+            //   subtitle: Text("Palestine"),
+            //   secondary: Icon(Icons.games),
+            //   controlAffinity: ListTileControlAffinity.trailing,
+            //   value: "JBA",
+            //   groupValue: country,
+            //   onChanged: (String? val) {
+            //     setState(() {
+            //       country = val!;
+            //     });
+            //   },
+            // ),
             SizedBox(
               height: 30,
             ),
