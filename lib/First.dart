@@ -1,6 +1,8 @@
 import 'dart:developer';
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/myCheckBox.dart';
 
 // The STATEFUL class
 class FirstTest extends StatefulWidget {
@@ -15,17 +17,85 @@ class FirstTest extends StatefulWidget {
 class _FirstState extends State<FirstTest> {
   dynamic selectedCountry;
   int x = 0;
-  bool gaza = false;
+  // List<Map<String, dynamic>> locs = [
+  //   {"Name": "Gaza", "isChecked": false},
+  //   {"Name": "Rafah", "isChecked": false},
+  //   {"Name": "Haifa", "isChecked": true},
+  //   {"Name": "Yafa", "isChecked": false},
+  //   {"Name": "Alquds", "isChecked": false},
+  //   {"Name": "AlJalil", "isChecked": false},
+  //   {"Name": "Allud", "isChecked": false},
+  // ];
+  String country = "";
+
   String isChecked = "";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
-      drawer: const Drawer(),
-      body: Container(child: null),
+      drawer: Drawer(),
+      body: Container(
+        margin: EdgeInsets.all(15),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Text("Gaza"),
+                Radio(
+                  activeColor: Colors.green,
+                  groupValue: country,
+                  value: "GZA",
+                  onChanged: (String? val) {
+                    setState(() {
+                      country = val!;
+                      print(country);
+                    });
+                  },
+                ),
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Text("AlQuds"),
+                Radio(
+                  groupValue: country,
+                  value: "QDS",
+                  onChanged: (String? val) {
+                    setState(() {
+                      country = val!;
+                      print(country);
+                    });
+                  },
+                ),
+              ],
+            ),
+            SizedBox(
+              height: 30,
+            ),
+            ElevatedButton(
+              onPressed: () {
+                setState(() {
+                  country = country;
+                  print("The country is: $country");
+                });
+              },
+              child: Text("Click!"),
+            ),
+            Text("The chosen country is: $country"),
+          ],
+        ),
+      ),
     );
   }
+  // ========= For List Box ==========//
+  // List<CheckboxListTile> checkboxes(List list, Set<void>? onChange(val)) {
+  //   return list.map((e) => myChecBox.fromMap(e, onChange)).toList();
+  // }
 }
+
 
 
 //Column(
