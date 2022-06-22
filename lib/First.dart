@@ -38,164 +38,200 @@ class _FirstState extends State<FirstTest> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
-      drawer: Drawer(),
-      body: Container(
-        margin: EdgeInsets.all(15),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            ElevatedButton(
-                onPressed: () {
-                  var snackbar = SnackBar(
-                    behavior: SnackBarBehavior.fixed,
-                    duration: Duration(seconds: 8),
-                    // margin: EdgeInsets.only(bottom: 40, left: 10, right: 10),
-                    content: Text("It is working"),
-                    action: SnackBarAction(
-                      label: "Close",
-                      onPressed: () {
-                        print("Closed");
-                      },
-                    ),
-                  );
-                  ScaffoldMessenger.of(context).showSnackBar(snackbar);
-                  setState(() {});
-                },
-                child: Text("Show SnackBar")),
-            // RadioListTile(
-            //   title: Text("Gaza"),
-            //   activeColor: Colors.green[600],
-            //   selected: country == "GZA" ? true : false,
-            //   subtitle: Text("Palestine"),
-            //   value: "GZA",
-            //   groupValue: country,
-            //   onChanged: (String? val) {
-            //     setState(() {
-            //       country = val!;
-            //     });
-            //   },
-            // ),
-            // RadioListTile(
-            //   activeColor: Colors.green[600],
-            //   selected: country == "QDS" ? true : false,
-            //   title: Text("AlQuds"),
-            //   subtitle: Text("Palestine"),
-            //   value: "QDS",
-            //   groupValue: country,
-            //   onChanged: (String? val) {
-            //     setState(() {
-            //       country = val!;
-            //     });
-            //   },
-            // ),
-            // RadioListTile(
-            //   activeColor: Colors.green[600],
-            //   selected: country == "RMH" ? true : false,
-            //   title: Text("Ramalla"),
-            //   subtitle: Text("Palestine"),
-            //   value: "RMH",
-            //   groupValue: country,
-            //   onChanged: (String? val) {
-            //     setState(() {
-            //       country = val!;
-            //     });
-            //   },
-            // ),
-            // RadioListTile(
-            //   activeColor: Colors.green[600],
-            //   selected: country == "RFH" ? true : false,
-            //   controlAffinity: ListTileControlAffinity.trailing,
-            //   secondary: Icon(Icons.flag),
-            //   title: Text("Rafah"),
-            //   subtitle: Text("Palestine"),
-            //   value: "RFH",
-            //   groupValue: country,
-            //   onChanged: (String? val) {
-            //     setState(() {
-            //       country = val!;
-            //     });
-            //   },
-            // ),
-            // RadioListTile(
-            //   activeColor: Colors.green[600],
-            //   selected: country == "JBA" ? true : false,
-            //   title: Text("Jabalia"),
-            //   subtitle: Text("Palestine"),
-            //   secondary: Icon(Icons.games),
-            //   controlAffinity: ListTileControlAffinity.trailing,
-            //   value: "JBA",
-            //   groupValue: country,
-            //   onChanged: (String? val) {
-            //     setState(() {
-            //       country = val!;
-            //     });
-            //   },
-            // ),
-            SizedBox(
-              height: 30,
-            ),
+        appBar: AppBar(),
+        drawer: Drawer(),
+        body: Container(
+          margin: EdgeInsets.all(15),
+        )
+        // child: Column(
+        //   mainAxisAlignment: MainAxisAlignment.start,
+        //   children: [
+        //     ElevatedButton(
+        //         onPressed: () {
+        //           var snackbar = SnackBar(
+        //             behavior: SnackBarBehavior.floating,
+        //             duration: Duration(seconds: 8),
+        //             backgroundColor: Colors.amber,
+        //             margin: EdgeInsets.only(bottom: 40, left: 10, right: 10),
+        //             padding: EdgeInsets.all(10),
+        //             content: Text("It is working"),
+        //             // action: SnackBarAction(
+        //             //   textColor: Colors.grey[900],
+        //             //   onPressed: () {
+        //             //     print("close");
+        //             //   },
+        //             //   label: "Close Me!",
+        //             // ),
+        //           );
+        //           ScaffoldMessenger.of(context).showSnackBar(snackbar);
 
-            SwitchListTile(
-              // activeColor: Colors.purple,
-              activeTrackColor: Colors.purple[100],
-              activeColor: Colors.purple,
-              inactiveTrackColor: Colors.black,
-              inactiveThumbColor: Colors.grey[400],
-              title: Text("Are you there?"),
-              subtitle: Text("Do not lie"),
-              value: isWant,
-              onChanged: (val) {
-                setState(() {
-                  isWant = val;
-                });
-              },
-            ),
+        //           showDialog(
+        //               context: context,
+        //               builder: (context) {
+        //                 return AlertDialog(
+        //                   backgroundColor: Colors.green[800],
+        //                   title: Text("Delete?"),
+        //                   titlePadding: EdgeInsets.only(top: 25, left: 30),
+        //                   titleTextStyle: TextStyle(
+        //                     fontSize: 20,
+        //                     color: Color.fromARGB(249, 255, 0, 0),
+        //                     shadows: [
+        //                       Shadow(color: Colors.white, blurRadius: 2)
+        //                     ],
+        //                   ),
+        //                   content: Text("The alert content"),
+        //                   contentTextStyle: TextStyle(color: Colors.white),
+        //                   contentPadding:
+        //                       EdgeInsets.only(top: 15, bottom: 10, left: 30),
+        //                   actions: [
+        //                     GestureDetector(
+        //                       child: Text(
+        //                         "Close me!",
+        //                         style: TextStyle(color: Colors.white),
+        //                       ),
+        //                       onTap: () {},
+        //                     ),
+        //                     Text("Stay", style: TextStyle(color: Colors.white)),
+        //                   ],
+        //                   actionsAlignment: MainAxisAlignment.spaceAround,
+        //                   actionsPadding: EdgeInsets.only(bottom: 12),
+        //                 );
+        //               });
+        //         },
+        //         child: Text("Show SnackBar")),
+        //     // RadioListTile(
+        //     //   title: Text("Gaza"),
+        //     //   activeColor: Colors.green[600],
+        //     //   selected: country == "GZA" ? true : false,
+        //     //   subtitle: Text("Palestine"),
+        //     //   value: "GZA",
+        //     //   groupValue: country,
+        //     //   onChanged: (String? val) {
+        //     //     setState(() {
+        //     //       country = val!;
+        //     //     });
+        //     //   },
+        //     // ),
+        //     // RadioListTile(
+        //     //   activeColor: Colors.green[600],
+        //     //   selected: country == "QDS" ? true : false,
+        //     //   title: Text("AlQuds"),
+        //     //   subtitle: Text("Palestine"),
+        //     //   value: "QDS",
+        //     //   groupValue: country,
+        //     //   onChanged: (String? val) {
+        //     //     setState(() {
+        //     //       country = val!;
+        //     //     });
+        //     //   },
+        //     // ),
+        //     // RadioListTile(
+        //     //   activeColor: Colors.green[600],
+        //     //   selected: country == "RMH" ? true : false,
+        //     //   title: Text("Ramalla"),
+        //     //   subtitle: Text("Palestine"),
+        //     //   value: "RMH",
+        //     //   groupValue: country,
+        //     //   onChanged: (String? val) {
+        //     //     setState(() {
+        //     //       country = val!;
+        //     //     });
+        //     //   },
+        //     // ),
+        //     // RadioListTile(
+        //     //   activeColor: Colors.green[600],
+        //     //   selected: country == "RFH" ? true : false,
+        //     //   controlAffinity: ListTileControlAffinity.trailing,
+        //     //   secondary: Icon(Icons.flag),
+        //     //   title: Text("Rafah"),
+        //     //   subtitle: Text("Palestine"),
+        //     //   value: "RFH",
+        //     //   groupValue: country,
+        //     //   onChanged: (String? val) {
+        //     //     setState(() {
+        //     //       country = val!;
+        //     //     });
+        //     //   },
+        //     // ),
+        //     // RadioListTile(
+        //     //   activeColor: Colors.green[600],
+        //     //   selected: country == "JBA" ? true : false,
+        //     //   title: Text("Jabalia"),
+        //     //   subtitle: Text("Palestine"),
+        //     //   secondary: Icon(Icons.games),
+        //     //   controlAffinity: ListTileControlAffinity.trailing,
+        //     //   value: "JBA",
+        //     //   groupValue: country,
+        //     //   onChanged: (String? val) {
+        //     //     setState(() {
+        //     //       country = val!;
+        //     //     });
+        //     //   },
+        //     // ),
+        //     SizedBox(
+        //       height: 30,
+        //     ),
 
-            SizedBox(
-              height: 30,
-            ),
-            Text("You are for $isWant in $country"),
-            // Container(
-            //   child: ListTile(
-            //     title: Text("Hashem Alkeshawi"),
-            //     subtitle: Text("Eng."),
-            //     leading: Icon(Icons.engineering),
-            //     trailing: CircleAvatar(
-            //       // foregroundColor: Colors.yellow[200],
-            //       // backgroundColor: Colors.yellow[900],
-            //       radius: 20,
-            //       child: null,
-            //       backgroundImage: AssetImage("recourses/me.png"),
-            //     ),
-            //     tileColor: myColor(darkness),
-            //     onLongPress: () {
-            //       setState(() {
-            //         darkness > 800 ? darkness = 100 : darkness += 100;
-            //         print(darkness);
-            //       });
-            //     },
-            //     onTap: () {
-            //       setState(
-            //         () {
-            //           darkness < 200 ? darkness = 900 : darkness -= 100;
-            //           print(darkness);
-            //         },
-            //       );
-            //     },
-            //   ),
-            // ),
-            CircleAvatar(
-              // foregroundColor: Colors.yellow[200],
-              // backgroundColor: Colors.yellow[900],
-              radius: 60,
-              child: null,
-              backgroundImage: AssetImage("recourses/me.png"),
-            ),
-          ],
-        ),
-      ),
-    );
+        //     SwitchListTile(
+        //       // activeColor: Colors.purple,
+        //       activeTrackColor: Colors.purple[100],
+        //       activeColor: Colors.purple,
+        //       inactiveTrackColor: Colors.black,
+        //       inactiveThumbColor: Colors.grey[400],
+        //       title: Text("Are you there?"),
+        //       subtitle: Text("Do not lie"),
+        //       value: isWant,
+        //       onChanged: (val) {
+        //         setState(() {
+        //           isWant = val;
+        //         });
+        //       },
+        //     ),
+
+        //     SizedBox(
+        //       height: 30,
+        //     ),
+        //     Text("You are for $isWant in $country"),
+        //     // Container(
+        //     //   child: ListTile(
+        //     //     title: Text("Hashem Alkeshawi"),
+        //     //     subtitle: Text("Eng."),
+        //     //     leading: Icon(Icons.engineering),
+        //     //     trailing: CircleAvatar(
+        //     //       // foregroundColor: Colors.yellow[200],
+        //     //       // backgroundColor: Colors.yellow[900],
+        //     //       radius: 20,
+        //     //       child: null,
+        //     //       backgroundImage: AssetImage("recourses/me.png"),
+        //     //     ),
+        //     //     tileColor: myColor(darkness),
+        //     //     onLongPress: () {
+        //     //       setState(() {
+        //     //         darkness > 800 ? darkness = 100 : darkness += 100;
+        //     //         print(darkness);
+        //     //       });
+        //     //     },
+        //     //     onTap: () {
+        //     //       setState(
+        //     //         () {
+        //     //           darkness < 200 ? darkness = 900 : darkness -= 100;
+        //     //           print(darkness);
+        //     //         },
+        //     //       );
+        //     //     },
+        //     //   ),
+        //     // ),
+        //     CircleAvatar(
+        //       // foregroundColor: Colors.yellow[200],
+        //       // backgroundColor: Colors.yellow[900],
+        //       radius: 60,
+        //       child: null,
+        //       backgroundImage: AssetImage("recourses/me.png"),
+        //     ),
+        //   ],
+        // ),
+
+        );
   }
   // Row(
   //   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
